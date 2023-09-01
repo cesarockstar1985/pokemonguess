@@ -59,6 +59,8 @@ export default {
             } else {
                 this.message = `Oops, era ${ this.pokemon.name }`
             }
+
+            console.log('hola mundo', this.showPokemon);
         },
         newGame() {
             this.showPokemon = false;

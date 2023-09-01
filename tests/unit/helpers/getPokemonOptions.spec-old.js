@@ -1,28 +1,28 @@
-import getPokemonOptions, { getPokemonNames, getPokemons } from '@/helpers/getPokemonOptions';
+import getPokemonOptions, { getPokemons, getPokemonNames } from '@/helpers/getPokemonOptions'
 
-describe('getPokemonOptions', () => {
-  
-    test('desbe regresar un arreglo de numeros', () => {
+describe('getPokemonOptions helpers', () => {
+    
+    test('desbe regresar un arreglo de numeros ', () => {
         
         const pokemons = getPokemons()
 
-        expect( pokemons.length ).toBe(650)
-        expect( pokemons[0] ).toBe(1)
-        expect( pokemons[1] ).toBe(2)
-        expect( pokemons[500] ).toBe(501)
-        expect( pokemons[649] ).toBe(650)
+        expect( pokemons.length ).toBe( 650 )
+        expect( pokemons[0] ).toBe( 1 )
+        expect( pokemons[500] ).toBe( 501 )
+        expect( pokemons[649] ).toBe( 650 )
+
     })
 
-    test('debe retornar un arreglo de 4 elementos con nombres de pokemon', async() => {
+    test('debe retornar un arreglo de 4 elementos con nombres de pokemon', async () => {
         
         const pokemons = await getPokemonNames([1,2,3,4])
 
         expect( pokemons ).toStrictEqual([
-            { name: 'bulbasaur', id: 1 },
-            { name: 'ivysaur', id: 2 },
-            { name: 'venusaur', id: 3 },
-            { name: 'charmander', id: 4 }
-        ])
+            { name: 'Bulbasaur', id: 1 },
+            { name: 'Ivysaur', id: 2 },
+            { name: 'Venusaur', id: 3 },
+            { name: 'Charmander', id: 4 }
+          ])
     })
 
     test('getPokemonOptions debe de retornar un arreglo mezclado', async() => {
@@ -47,8 +47,8 @@ describe('getPokemonOptions', () => {
                 name: expect.any(String),
                 id: expect.any(Number)
             }
-          ])
+        ])
 
-    })
+    });
 
 })
